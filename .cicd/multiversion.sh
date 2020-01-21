@@ -40,7 +40,7 @@ cd $GIT_ROOT/eos_multiversion_builder
 echo 'Downloading other versions of nodeos...'
 pip uninstall -y urllib3 # Fix for incompatible package during migration to EKS build environment.
 pip install urllib3==1.22
-python2.7 $GIT_REPO/helpers/multi_eos_docker.py
+python2.7 $GIT_REPO/.cicd/helpers/multi_eos_docker.py
 cd $GIT_ROOT
 cp $GIT_ROOT/tests/multiversion_paths.conf $GIT_ROOT/build/tests
 cd $GIT_ROOT/build
