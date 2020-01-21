@@ -443,7 +443,7 @@ if ( [[ ! $PINNED == false ]] ); then
         cat <<EOF
   - label: ":pipeline: Multiversion Test"
     command: 
-      - "buildkite-agent artifact download build.tar.gz . --step ':ubuntu: Ubuntu 18.04 - Build' && tar -xzf build.tar.gz --build a9826fbc-145a-41b8-936e-98cb35ca4834"
+      - "buildkite-agent artifact download build.tar.gz . --step ':ubuntu: Ubuntu 18.04 - Build' && tar -xzf build.tar.gz"
       - ./.cicd/test.sh .cicd/multiversion.sh
     env:
       IMAGE_TAG: "ubuntu-18.04-pinned"
