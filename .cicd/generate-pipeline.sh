@@ -449,7 +449,7 @@ if ( [[ ! $PINNED == false ]] ); then
       IMAGE_TAG: "ubuntu-18.04-pinned"
       PLATFORM_TYPE: "pinned"
     agents:
-      queue: "$BUILDKITE_BUILD_AGENT_QUEUE"
+      queue: "$BUILDKITE_TEST_AGENT_QUEUE"
     timeout: ${TIMEOUT:-30}
     skip: ${SKIP_LINUX}${SKIP_UBUNTU_18_04}${SKIP_MULTIVERSION_TEST}
 
