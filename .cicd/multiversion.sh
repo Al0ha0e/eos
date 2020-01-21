@@ -1,6 +1,5 @@
 #!/bin/bash
 set -eo pipefail # exit on failure of any "simple" command (excludes &&, ||, or | chains)
-. ./.cicd/helpers/general.sh
 # variables
 GIT_ROOT="$(dirname $BASH_SOURCE[0])/.."
 echo "+++ $([[ "$BUILDKITE" == 'true' ]] && echo ':evergreen_tree: ')Configuring Environment"
@@ -39,7 +38,6 @@ fi
 # multiversion
 cd $GIT_ROOT/eos_multiversion_builder
 echo 'Downloading other versions of nodeos...'
-apt-get install -y python-pip # RUNNING HERE FOR DEV PURPOSES
 pip uninstall -y urllib3 # Fix for incompatible package during migration to EKS build environment.
 pip install urllib3==1.22
 python2.7 .cicd/helpers/multi_eos_docker.py
